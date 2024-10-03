@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Club 1</title>
+  <link rel="stylesheet" href="/public/admin_file_css/admin_clubs.css">
+</head>
+<body>
+  <h1>Club 1 Students</h1>
+  <div class="student-form">
+    <input type="text" id="name" placeholder="Full Name">
+    <input type="text" id="universityNumber" placeholder="University Number">
+    <input type="text" id="college" placeholder="College">
+    <input type="text" id="gpa" placeholder="Cumulative Average">
+    <input type="text" id="phone" placeholder="Phone Number">
+    <input type="email" id="email" placeholder="Email">
+    <button onclick="addStudent()">Add Student</button>
+  </div>
+
+  <table id="studentsTable">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>University Number</th>
+        <th>College</th>
+        <th>GPA</th>
+        <th>Phone</th>
+        <th>Email</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Students data will be dynamically inserted here -->
+    </tbody>
+  </table>
+
+  <script src="/scripts/clubs_js/club1.js"></script> <!-- Separate JS for each club page -->
+</body>
+</html>

@@ -1,0 +1,38 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #f7f7f7;
+  }
+  
+  h1 {
+    margin: 20px;
+    color: #333;
+  }
+  
+  .club-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px auto;
+    max-width: 1000px;
+  }
+  
+  .club-card {
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    padding: 20px;
+    margin: 10px;
+    width: 150px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+  }
+  
+  .club-card:hover {
+    transform: scale(1.1);
+  }
+  

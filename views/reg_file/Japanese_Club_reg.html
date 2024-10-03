@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Japanese club Registration form</title>
+    <link rel="stylesheet" href="/public/reg_file_css/art_club.css">
+    <link rel="stylesheet" href="/public/navbar.css">
+</head>
+<body>
+  <div class="page-container"></div>
+    <header>
+      <div class="h-container">
+          <div class="header-content">  
+                <nav>
+                  <ul id="main">
+                    <a href="#">Home</a>
+                    <a href="#">My profile</a>
+                    <a href="#">Clubs
+                      <ul class="drop">
+                        <div>
+                          <li onclick="">Clubs</li>
+                          <li onclick="">Clubs</li>
+                          <li onclick="">Clubs</li>
+                          <li onclick="">Clubs</li>
+                          <li onclick="">Clubs</li>
+                          <li onclick="">Clubs</li>
+                          <li onclick="">Clubs</li>
+                          <li onclick="">Clubs</li>
+                          <li onclick="">Clubs</li>
+                          <li onclick="">Clubs</li>
+                          <li onclick="">Clubs</li>
+                          <li onclick="">Clubs</li>
+                        </div>
+                      </ul>
+                  </a>
+                    <a href="#">News</a>
+                    <div id="marker"></div>
+                  </ul>
+                </nav>
+              <div class="welcome-text">Welcome to Our Community Hub!</div>
+              <div class="auth-buttons">
+                  <img src="/imeges/logo2019.png" alt="Logo" class="logo">
+              </div>
+          </div>
+      </div>
+  </header>
+  </div>
+  <br>
+  <br>
+   <div class="container">
+    <main>
+      <h1 class="mb-8 text-3xl font-bold">Japanese Club Membership Form</h1>
+    <form class="space-y-8">
+      <div>
+        <div class="grid grid-cols-2 gap-6">
+          <div>
+            <label for="name">Full Name</label>
+            <input id="name" placeholder="Enter your name" required type="text">
+          </div>
+          <div>
+            <label for="university-number">University Number</label>
+            <input id="university-number" placeholder="Enter your university number" required type="text">
+          </div>
+          <div>
+            <label for="date-of-birth">Date of Birth</label>
+            <input id="date-of-birth" required type="date">
+          </div>
+          <div>
+            <label for="Current-residence">Current residence</label>
+            <input id="Current-residence" placeholder="Enter your current residence" required type="text">
+          </div>
+          <div>
+            <label for="Nationality">Nationality</label>
+            <input id="Nationality" placeholder="Enter your Nationality" required type="text">
+          </div>
+          <div>
+            <label for="Colleges">College:</label>
+            <select name="Colleges" id="Colleges">
+                <option value=""></option>
+                <option value="Faculty of Medicine">Faculty of Medicine</option>
+                <option value="Faculty of Dentistry">Faculty of Dentistry</option>
+                <option value="College of Pharmacy">College of Pharmacy</option>
+                <option value="College of Engineering">College of Engineering</option>
+                <option value="Faculty of Civil Engineering and Architecture">Faculty of Civil Engineering and Architecture</option>
+                <option value="Faculty of Law">Faculty of Law</option>
+                <option value="College of Business Administration">College of Business Administration</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="grid grid-cols-2 gap-6">
+          <div>
+            <label for="phone-number">Phone Number</label>
+            <input id="phone-number" placeholder="Enter your phone number" required type="tel">
+          </div>
+          <div>
+            <label for="email">Email Address</label>
+            <input id="email" placeholder="Enter your email address" required type="email">
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="grid grid-cols-2 gap-6">
+          <div>
+            <label for="basic-skills">Membership goal:</label>
+            <textarea id="basic-skills" placeholder="Enter your Membership goal"></textarea>
+          </div>
+          <div>
+            <label for="workshops">Skills:</label>
+            <textarea id="workshops" placeholder="Enter your skills"></textarea>
+          </div>
+          <div>
+            <label for="workshops">Are you a member of another club?</label>
+            <div class="radio">
+                <input type="radio" name="another-club" id="Yer" value="Yes">
+                <label for="Yes">Yes</label>
+                <input type="radio" name="another-club" id="No" value="No">
+                <label for="No">No</label>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      <div>
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+    </main>
+   </div> 
+   <div class="footer-class">
+    <footer>
+      <div class="footer-container">
+          <div class="footer-content">
+              <div class="footer-section">
+                  <h3>Contact Us</h3>
+                  <div class="contact-info">
+                      <div><i data-lucide="phone"></i> +1 (123) 456-7890</div>
+                      <div><i data-lucide="mail"></i> contact@communityhub.com</div>
+                  </div>
+              </div>
+              <div class="footer-section">
+                  <h3>Follow Us</h3>
+                  <div class="social-links">
+                      <a href="#"><img src="/imeges/facebook.png" alt="facebook"></a>
+                      <a href="#"><img src="/imeges/instagram.png" alt="instagram" ></a>
+                  </div>
+              </div>
+              <div class="footer-section">
+                  <h3>Newsletter</h3>
+                  <form class="newsletter-form">
+                      <input type="email" placeholder="Your email">
+                      <button type="submit" class="btn btn-primary">Subscribe</button>
+                  </form>
+              </div>
+          </div>
+          <hr>
+          <div class="copyright">
+              © 2023 Community Hub. All rights reserved.
+          </div>
+      </div>
+  </footer>
+   </div>
+</body>
+</html>
