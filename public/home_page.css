@@ -17,6 +17,7 @@
 }
 .navbar .dropdown-item:hover{
     background-color: #03AED2;
+    cursor: default;
 }
 .navbar .nav-item{
     font-size: larger;
