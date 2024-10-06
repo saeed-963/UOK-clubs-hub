@@ -1,7 +1,7 @@
 /* Root variables for color and design */
 :root {
-    --background: hsl(36, 39%, 88%);
-    --foreground: hsl(36, 45%, 15%);
+    --background: #FEEFAD;
+    --foreground: black;
     --primary: hsl(36, 45%, 70%);
     --primary-foreground: hsl(36, 45%, 11%);
     --secondary: hsl(40, 35%, 77%);
@@ -24,7 +24,7 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-image: url("/imeges/backgrounds/blob-scene-haikei.svg");
+    background-image: url("/imeges/backgrounds/colorful-stingrays.svg");
 }
 
 /* Card container */
@@ -88,8 +88,8 @@ body {
 .actions button {
     width: 80%;
     padding: 0.75rem;
-    background-color: var(--primary);
-    color: var(--primary-foreground);
+    background-color: #03AED2;
+    color: white;
     border: none;
     border-radius: var(--radius);
     font-family: var(--font-sans-serif);
@@ -99,6 +99,6 @@ body {
 }
 
 .actions button:hover {
-    background-color: var(--primary-foreground);
+    background-color: #006EB4;
     color: white;
 }

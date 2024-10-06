@@ -7,6 +7,7 @@
     <title>Community Hub</title>
     <link rel="stylesheet" href="/public/home_page.css">
     <link rel="stylesheet" href="/public/bootstrap.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
@@ -25,14 +26,14 @@
                         <a class="nav-link active" aria-current="page" href="#">Home</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="#">Features</a>
+                        <a class="nav-link" href="#">My Profile</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="#">Pricing</a>
+                        <a class="nav-link" href="#">News</a>
                       </li>
                       <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                          Dropdown link
+                          Our Clubs
                         </a>
                         <ul class="dropdown-menu">
                           <li><a class="dropdown-item" href="#">Art Club</a></li>
@@ -50,7 +51,7 @@
                   </div>
                 </div>
                 <div class="auth-buttons">
-                    <img src="/imeges/Screenshot 2024-09-30 120420.png" alt="Logo" class="logo">
+                    <img src="/imeges/pr-logo.jpg" alt="Logo" class="logo">
                 </div>
               </nav>
         </header>
@@ -58,7 +59,7 @@
         <main>
             <div class="container" >
                 <!-- Welcome Card -->
-                <div class="welcome-card">
+                <div class="welcome-card" data-aos="flip-right" data-aos-duration="1500">
                     <div class="welcome-content">
                         <h1>Welcome to UOK clubs Hub</h1>
                         <p>Discover amazing clubs, connect with various clubs, and be part of a thriving community.
@@ -73,8 +74,8 @@
 
                 <!-- Service Cards -->
                 <h2 class="services-title">Our Clubs</h2>
-                <div class="services-grid">
-                    <div class="service-card">
+                <div class="services-grid" >
+                    <div class="service-card" data-aos="fade-up-right">
                         <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=300&q=80"
                             alt="Event Planning">
                         <div class="service-content">
@@ -82,10 +83,10 @@
                             <p>Professional event planning services for all occasions.</p>
                         </div>
                         <div class="service-footer">
-                            <button class="btn btn-primary">Learn More</button>
+                            <button class="btn btn-primary" onclick="goToPrInfo()">Learn More</button>
                         </div>
                     </div>
-                    <div class="service-card">
+                    <div class="service-card" data-aos="fade-up-left">
                         <img src="https://images.unsplash.com/photo-1452780212940-6f5c0d14d848?auto=format&fit=crop&w=300&q=80"
                             alt="Photography Tours">
                         <div class="service-content">
@@ -93,10 +94,10 @@
                             <p>Guided photography tours to capture stunning moments.</p>
                         </div>
                         <div class="service-footer">
-                            <button class="btn btn-primary">Learn More</button>
+                            <button class="btn btn-primary" onclick="goToEquestrianInfo()">Learn More</button>
                         </div>
                     </div>
-                    <div class="service-card">
+                    <div class="service-card" data-aos="fade-up-right">
                         <img src="https://images.unsplash.com/photo-1517963879433-6ad2b056d712?auto=format&fit=crop&w=300&q=80"
                             alt="Sports Training">
                         <div class="service-content">
@@ -104,10 +105,10 @@
                             <p>Expert coaching for various sports and fitness activities.</p>
                         </div>
                         <div class="service-footer">
-                            <button class="btn btn-primary">Learn More</button>
+                            <button class="btn btn-primary" onclick="goToReachInfo()">Learn More</button>
                         </div>
                     </div>
-                    <div class="service-card">
+                    <div class="service-card" data-aos="fade-up-left">
                         <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=300&q=80"
                             alt="Academic Tutoring">
                         <div class="service-content">
@@ -115,10 +116,10 @@
                             <p>Personalized tutoring sessions for all academic levels.</p>
                         </div>
                         <div class="service-footer">
-                            <button class="btn btn-primary">Learn More</button>
+                            <button class="btn btn-primary" onclick="goToCulturalInfo()">Learn More</button>
                         </div>
                     </div>
-                    <div class="service-card">
+                    <div class="service-card" data-aos="fade-up-right">
                         <img src="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?auto=format&fit=crop&w=300&q=80"
                             alt="Art Workshops">
                         <div class="service-content">
@@ -126,10 +127,10 @@
                             <p>Creative workshops for aspiring artists of all ages.</p>
                         </div>
                         <div class="service-footer">
-                            <button class="btn btn-primary">Learn More</button>
+                            <button class="btn btn-primary" onclick="goToArtInfo()">Learn More</button>
                         </div>
                     </div>
-                    <div class="service-card">
+                    <div class="service-card" data-aos="fade-up-left">
                         <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=300&q=80"
                             alt="Music Lessons">
                         <div class="service-content">
@@ -137,10 +138,10 @@
                             <p>Learn to play various instruments with skilled instructors.</p>
                         </div>
                         <div class="service-footer">
-                            <button class="btn btn-primary">Learn More</button>
+                            <button class="btn btn-primary" onclick="goToMusicInfo()">Learn More</button>
                         </div>
                     </div>
-                    <div class="service-card">
+                    <div class="service-card" data-aos="fade-up-right">
                         <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=300&q=80"
                             alt="Debate Coaching">
                         <div class="service-content">
@@ -148,10 +149,10 @@
                             <p>Improve your public speaking and argumentation skills.</p>
                         </div>
                         <div class="service-footer">
-                            <button class="btn btn-primary">Learn More</button>
+                            <button class="btn btn-primary" onclick="goToJapaneseInfo()">Learn More</button>
                         </div>
                     </div>
-                    <div class="service-card">
+                    <div class="service-card" data-aos="fade-up-left">
                         <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=300&q=80"
                             alt="Science Experiments">
                         <div class="service-content">
@@ -159,10 +160,10 @@
                             <p>Hands-on science experiments for curious minds.</p>
                         </div>
                         <div class="service-footer">
-                            <button class="btn btn-primary">Learn More</button>
+                            <button class="btn btn-primary" onclick="goToAstroInfo()">Learn More</button>
                         </div>
                     </div>
-                    <div class="service-card">
+                    <div class="service-card" data-aos="fade-up-right">
                         <img src="https://images.unsplash.com/photo-1452780212940-6f5c0d14d848?auto=format&fit=crop&w=300&q=80"
                             alt="Photography Tours">
                         <div class="service-content">
@@ -170,7 +171,18 @@
                             <p>Guided photography tours to capture stunning moments.</p>
                         </div>
                         <div class="service-footer">
-                            <button class="btn btn-primary">Learn More</button>
+                            <button class="btn btn-primary" onclick="goToMedicalInfo()">Learn More</button>
+                        </div>
+                    </div>
+                    <div class="service-card" data-aos="fade-up-left">
+                        <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=300&q=80"
+                            alt="Science Experiments">
+                        <div class="service-content">
+                            <h3>Eathar Club</h3>
+                            <p>Hands-on science experiments for curious minds.</p>
+                        </div>
+                        <div class="service-footer">
+                            <button class="btn btn-primary" onclick="goToEatharInfo()">Learn More</button>
                         </div>
                     </div>
                 </div>
@@ -208,7 +220,12 @@
             </div>
         </footer>
     </div>
+    <script src="/scripts/navigate.js"></script>
     <script src="/scripts/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+      </script>
 </body>
 
 </html>

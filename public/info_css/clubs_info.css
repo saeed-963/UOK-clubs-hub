@@ -6,22 +6,14 @@ body {
 }
 
 header {
-    background-color: #eebe71;
+    background-color: #03AED2;
     color: #fff;
     text-align: center;
     padding: 1rem;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
 }
-.navbar .nav-link{
-    color: #f8f8f8;
 
-}
-.navbar .dropdown-item{
-    color: #ffffff;
-    font-size: larger;
-}
-.navbar .nav-item{
-    font-size: larger;
-}
 
 .auth-buttons {
     display: flex;
@@ -34,8 +26,26 @@ header {
     height: 80px;
     border-radius: 50%;
     background-color: white;
-    position: static;
 }
+.navbar .nav-link{
+    color: #f8f8f8;
+
+}
+.navbar .dropdown-menu{
+    background-color: #03AED2;
+}
+.navbar .dropdown-item{
+    color: white;
+    font-size: larger;
+}
+.navbar .dropdown-item:hover{
+    background-color: #03AED2;
+}
+.navbar .nav-item{
+    font-size: larger;
+}
+
+
 
 h1 {
     margin: 0;
@@ -44,7 +54,7 @@ h1 {
 .image-scroll {
     width: 100%;
     overflow: hidden;
-    background-color: #ddd;
+    background-color: #FEEFAD;
     padding: 20px 0;
 }
 
@@ -67,6 +77,7 @@ h1 {
     height: 300px;
     object-fit: cover;
     margin-right: 20px;
+    border-radius: 10px;
 }
 
 main {
@@ -113,29 +124,31 @@ ul {
 
 
 .footeree{
-    background:#000;
+    background:white;
     font-family: 'Play', sans-serif;
     text-align:center;
     padding: 10px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
     }
     
     .footeree .rowee{
     width:100%;
     margin:1% 0%;
     padding:0.6% 0%;
-    color:gray;
+    color: #03AED2;
     font-size:medium;
     }
     
     .footeree .rowee a{
     text-decoration:none;
-    color:gray;
+    color: #03AED2;
     transition:0.5s;
     font-size: medium;
     }
     
     .footeree .rowee a:hover{
-    color:#fff;
+    color:blue;
     }
     
     .footeree .rowee ul{
@@ -154,16 +167,16 @@ ul {
 
     
     @media (max-width:720px){
-    .footer{
+    .footeree{
     text-align:left;
     padding:5%;
     }
-    .footer .row ul li{
+    .footeree .row ul li{
     display:block;
     margin:10px 0px;
     text-align:left;
     }
-    .footer .row a i{
+    .footeree .row a i{
     margin:0% 3%;
     }
     }

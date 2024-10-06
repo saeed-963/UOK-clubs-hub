@@ -53,7 +53,7 @@ header {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    padding-bottom: 20px; /* Add padding at the bottom for spacing */
+    padding-bottom: 62px; /* Add padding at the bottom for spacing */
 }
 
 .news-card {
@@ -85,7 +85,62 @@ header {
 }
 
 /* Allow scrolling for the whole page */
-html, body {
-    height: auto; /* Make height auto to allow the page to grow with content */
-}
 
+
+.footeree{
+    background:white;
+    font-family: 'Play', sans-serif;
+    text-align:center;
+    padding: 10px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    }
+    
+    .footeree .rowee{
+    width:100%;
+    margin:1% 0%;
+    padding:0.6% 0%;
+    color: #03AED2;
+    font-size:medium;
+    }
+    
+    .footeree .rowee a{
+    text-decoration:none;
+    color: #03AED2;
+    transition:0.5s;
+    font-size: medium;
+    }
+    
+    .footeree .rowee a:hover{
+    color:blue;
+    }
+    
+    .footeree .rowee ul{
+    width:100%;
+    }
+    
+    .footeree .rowee ul li{
+    display:inline-block;
+    margin:0px 30px;
+    }
+    
+    .footeree .rowee a i{
+    font-size:1em;
+    margin:0% 1%;
+    }
+
+    
+    @media (max-width:720px){
+    .footeree{
+    text-align:left;
+    padding:5%;
+    }
+    .footeree .row ul li{
+    display:block;
+    margin:10px 0px;
+    text-align:left;
+    }
+    .footeree .row a i{
+    margin:0% 3%;
+    }
+    }

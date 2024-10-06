@@ -6,8 +6,9 @@
     <title>Art club Registration form</title>
     <link rel="stylesheet" href="/public/reg_file_css/art_club.css">
     <link rel="stylesheet" href="/public/bootstrap.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
-<body>
+<body style="background-color: #68D2E8;">
   <header>
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
         <div class="container-fluid">
@@ -21,33 +22,38 @@
                 <a class="nav-link active" aria-current="page" href="#">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Features</a>
+                <a class="nav-link" href="#">My Profile</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Pricing</a>
+                <a class="nav-link" href="#">News</a>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Dropdown link
+                  Our Clubs
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  <li><a class="dropdown-item" href="#">Art Club</a></li>
+                  <li><a class="dropdown-item" href="#">Astronomical Club</a></li>
+                  <li><a class="dropdown-item" href="#">Eathar club</a></li>
+                  <li><a class="dropdown-item" href="#">Equestrian club</a></li>
+                  <li><a class="dropdown-item" href="#">Japanese club</a></li>
+                  <li><a class="dropdown-item" href="#">Medical club</a></li>
+                  <li><a class="dropdown-item" href="#">Music club</a></li>
+                  <li><a class="dropdown-item" href="#">PR club</a></li>
+                  <li><a class="dropdown-item" href="#">Reach out club</a></li>
                 </ul>
               </li>
             </ul>
           </div>
         </div>
         <div class="auth-buttons">
-            <img src="/imeges/Screenshot 2024-09-30 120420.png" alt="Logo" class="logo">
+            <img src="/imeges/pr-logo.jpg" alt="Logo" class="logo">
         </div>
       </nav>
-      
 </header>
   <br>
   <br>
-   <div class="container">
+   <div class="container" data-aos="fade-up" data-aos-duration="2500">
     <main>
       <h1 class="mb-8 text-3xl font-bold">Art Club Membership Form</h1>
     <form class="space-y-8">
@@ -129,7 +135,7 @@
         </div>
       </div>
       <div>
-        <button type="submit">Submit</button>
+        <button class="btn btn-primary" type="submit">Submit</button>
       </div>
     </form>
     </main>
@@ -169,5 +175,9 @@
     </div>
 </footer>
 <script src="/scripts/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+      </script>
 </body>
 </html>
