@@ -31,6 +31,9 @@ header {
     color: #f8f8f8;
 
 }
+.navbar .nav-link:hover{
+    cursor: pointer;
+}
 .navbar .dropdown-menu{
     background-color: #03AED2;
 }
@@ -40,15 +43,10 @@ header {
 }
 .navbar .dropdown-item:hover{
     background-color: #03AED2;
+    cursor: pointer;
 }
 .navbar .nav-item{
     font-size: larger;
-}
-
-
-
-h1 {
-    margin: 0;
 }
 
 .image-scroll {
@@ -94,8 +92,17 @@ main {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-h2 {
-    color: #333;
+.about h2 {
+    font-weight: bold;
+}
+.about p {
+    font-size: larger;
+}
+.goals h2 {
+    font-weight: bold;
+}
+.goals ul {
+    font-size: larger;
 }
 
 ul {

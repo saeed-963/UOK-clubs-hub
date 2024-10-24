@@ -7,51 +7,55 @@
     <title>Welcome to Our Club</title>
     <link rel="stylesheet" href="/public/info_css/clubs_info.css">
     <link rel="stylesheet" href="/public/bootstrap.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body style="background-color: #68D2E8;">
     <header>
         <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
             <div class="container-fluid">
-              <a class="navbar-brand" href="#">Navbar</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">My Profile</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">News</a>
-                  </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Our Clubs
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" onclick="goToArtInfo()" >Art Club</a></li>
-                        <li><a class="dropdown-item" onclick="goToAstroInfo()">Astronomical Club</a></li>
-                        <li><a class="dropdown-item" onclick="goToCulturalInfo()">Cultural Club</a></li>
-                        <li><a class="dropdown-item" onclick="goToEatharInfo()">Eathar club</a></li>
-                        <li><a class="dropdown-item" onclick="goToEquestrianInfo()">Equestrian club</a></li>
-                        <li><a class="dropdown-item" onclick="goToJapaneseInfo()">Japanese club</a></li>
-                        <li><a class="dropdown-item" onclick="goToMedicalInfo()">Medical club</a></li>
-                        <li><a class="dropdown-item" onclick="goToMusicInfo()">Music club</a></li>
-                        <li><a class="dropdown-item" onclick="goToPrInfo()">PR club</a></li>
-                        <li><a class="dropdown-item" onclick="goToReachInfo()">Reach out club</a></li>
+                <a class="navbar-brand" href="#">Navbar</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" onclick="goToHome()">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" onclick="goToStdPro()">My Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" onclick="goToNews()">News</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Our Clubs
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" onclick="goToArtInfo()">Art Club</a></li>
+                                <li><a class="dropdown-item" onclick="goToAstroInfo()">Astronomical Club</a></li>
+                                <li><a class="dropdown-item" onclick="goToCulturalInfo()">Cultural Club</a></li>
+                                <li><a class="dropdown-item" onclick="goToEatharInfo()">Eathar club</a></li>
+                                <li><a class="dropdown-item" onclick="goToEquestrianInfo()">Equestrian club</a></li>
+                                <li><a class="dropdown-item" onclick="goToJapaneseInfo()">Japanese club</a></li>
+                                <li><a class="dropdown-item" onclick="goToMedicalInfo()">Medical club</a></li>
+                                <li><a class="dropdown-item" onclick="goToMusicInfo()">Music club</a></li>
+                                <li><a class="dropdown-item" onclick="goToPrInfo()">PR club</a></li>
+                                <li><a class="dropdown-item" onclick="goToReachInfo()">Reach out club</a></li>
+                            </ul>
+                        </li>
                     </ul>
-                  </li>
-                </ul>
-              </div>
+                </div>
             </div>
             <div class="auth-buttons">
                 <img src="/imeges/pr-logo.jpg" alt="Logo" class="logo">
             </div>
-          </nav>
+        </nav>
     </header>
     <br>
     <br>
@@ -80,25 +84,35 @@
     </div>
 
     <main>
-        <section class="about">
+        <section class="about" data-aos="fade-right" data-aos-duration="1000">
             <h2>About Our Club</h2>
-            <p>Welcome to our amazing club! We are a community of like-minded individuals passionate about making a
-                difference in the world.</p>
-            <p>Our club focuses on personal growth, community service, and fostering meaningful connections among our
-                members.</p>
+            <p>
+                The Drawing Club at Al-Kalamoon University is a creative platform that aims to enhance artistic talents
+                among students and develop their skills in the field of fine arts. The club provides students with the
+                opportunity to express themselves through drawing using various artistic methods and media such as oil
+                paints, watercolors, charcoal, and pencil.
+
+                The club organizes art workshops and training sessions under the supervision of experienced artists, in
+                addition to art exhibitions that display students’ works. The club aims to build an artistic community
+                on campus that encourages collaboration, learning, and the exchange of ideas, and seeks to enhance
+                cultural and creative understanding among students.
+
+                The club is an ideal space for anyone interested in art, whether they are professional painters or
+                beginners who want to learn new skills and develop their artistic abilities.
+            </p>
         </section>
 
-        <section class="goals">
+        <section class="goals" data-aos="fade-left" data-aos-duration="1000">
             <h2>Our Goals</h2>
             <ul>
-                <li>Promote personal development and leadership skills</li>
-                <li>Engage in community service projects</li>
-                <li>Create a supportive network for our members</li>
-                <li>Organize fun and educational events</li>
+                <li>Developing artistic talents: Helping students discover and develop their skills in drawing and fine arts through continuous training and practice.</li>
+                <li>Organizing workshops and exhibitions: Organizing periodic art workshops to teach new techniques in drawing, in addition to holding exhibitions to display students' creativity inside and outside the university.</li>
+                <li>Enhancing cooperation between students: Building an artistic community that supports cooperation between students interested in art, to exchange ideas and experiences and implement joint artistic projects.</li>
+                <li>Stimulating appreciation for the arts: Promoting awareness and appreciation for the fine arts among students and the university community, and contributing to the dissemination of artistic culture.</li>
             </ul>
         </section>
 
-        <button class="join-button">Join Our Club</button>
+        <button class="join-button" onclick="goToArtReg()">Join Our Club</button>
     </main>
     <br>
     <br>
@@ -106,13 +120,13 @@
     <footer>
         <div class="footeree">
             <div class="rowee">
-                <a href="#"><i > <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
-                            fill="currentColor"  viewBox="0 0 16 16">
+                <a href="#"><i> <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                            viewBox="0 0 16 16">
                             <path
                                 d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951" />
                         </svg></i></a>
-                <a href="#"><i><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
-                            fill="currentColor" viewBox="0 0 16 16">
+                <a href="#"><i><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                            viewBox="0 0 16 16">
                             <path
                                 d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334" />
                         </svg></i></a>
@@ -136,6 +150,10 @@
     </footer>
     <script src="/scripts/navigate.js"></script>
     <script src="/scripts/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init()
+    </script>
 </body>
 
 </html>

@@ -27,9 +27,22 @@ body {
     background-image: url("/imeges/backgrounds/colorful-stingrays.svg");
 }
 
+.logo {
+    margin-right: 100px;
+    height: 411px;
+    width: 411px;
+}
+
+.logo img {
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
 /* Card container */
 .card {
-    background-color: var(--background);
+    background-color: #FDDE55;
     border: 1px solid var(--border);
     border-radius: var(--radius);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -48,7 +61,7 @@ body {
 
 .header p {
     font-family: var(--font-sans-serif);
-    font-size: 0.875rem;
+    font-size: 1rem;
     color: var(--primary-foreground);
 }
 
@@ -61,7 +74,7 @@ body {
 .input-group label {
     display: block;
     font-family: var(--font-sans-serif);
-    font-size: 0.875rem;
+    font-size: 1rem;
     margin-bottom: 0.5rem;
     text-align: start;
 }
@@ -75,7 +88,7 @@ body {
     font-size: 1rem;
     font-family: var(--font-monospace);
     color: var(--foreground);
-    background-color: var(--background);
+    background-color: white;
 }
 
 .input-group input:focus {

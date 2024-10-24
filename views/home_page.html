@@ -23,13 +23,13 @@
                   <div class="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul class="navbar-nav">
                       <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active" aria-current="page" onclick="goToHome()">Home</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="#">My Profile</a>
+                        <a class="nav-link" onclick="goToStdPro()">My Profile</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="#">News</a>
+                        <a class="nav-link" onclick="goToNews()">News</a>
                       </li>
                       <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -65,7 +65,7 @@
                         <h1>Welcome to UOK clubs Hub</h1>
                         <p>Discover amazing clubs, connect with various clubs, and be part of a thriving community.
                             We're here to provide you with the best experience possible.</p>
-                        <button class="btn btn-primary">Explore Now</button>
+                        <button class="btn btn-primary" id="myBtn">Explore Now</button>
                     </div>
                     <div class="welcome-image">
                         <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=800&q=80"
@@ -75,9 +75,9 @@
 
                 <!-- Service Cards -->
                 <h2 class="services-title">Our Clubs</h2>
-                <div class="services-grid" >
+                <div class="services-grid" id="myDiv">
                     <div class="service-card" data-aos="fade-up-right">
-                        <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=300&q=80"
+                        <img src="/imeges/pr.png"
                             alt="Event Planning">
                         <div class="service-content">
                             <h3>Public Relations Team</h3>
@@ -88,7 +88,7 @@
                         </div>
                     </div>
                     <div class="service-card" data-aos="fade-up-left">
-                        <img src="https://images.unsplash.com/photo-1452780212940-6f5c0d14d848?auto=format&fit=crop&w=300&q=80"
+                        <img src="/imeges/equestrian.png"
                             alt="Photography Tours">
                         <div class="service-content">
                             <h3>Equestrian Club</h3>
@@ -99,7 +99,7 @@
                         </div>
                     </div>
                     <div class="service-card" data-aos="fade-up-right">
-                        <img src="https://images.unsplash.com/photo-1517963879433-6ad2b056d712?auto=format&fit=crop&w=300&q=80"
+                        <img src="/imeges/reach.webp"
                             alt="Sports Training">
                         <div class="service-content">
                             <h3>Reach Out Club</h3>
@@ -110,7 +110,7 @@
                         </div>
                     </div>
                     <div class="service-card" data-aos="fade-up-left">
-                        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=300&q=80"
+                        <img src="/imeges/cultural.png"
                             alt="Academic Tutoring">
                         <div class="service-content">
                             <h3>Cultural Club</h3>
@@ -121,7 +121,7 @@
                         </div>
                     </div>
                     <div class="service-card" data-aos="fade-up-right">
-                        <img src="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?auto=format&fit=crop&w=300&q=80"
+                        <img src="/imeges/art.png"
                             alt="Art Workshops">
                         <div class="service-content">
                             <h3>Art Club</h3>
@@ -132,7 +132,7 @@
                         </div>
                     </div>
                     <div class="service-card" data-aos="fade-up-left">
-                        <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=300&q=80"
+                        <img src="/imeges/music.png"
                             alt="Music Lessons">
                         <div class="service-content">
                             <h3>Music Club</h3>
@@ -143,7 +143,7 @@
                         </div>
                     </div>
                     <div class="service-card" data-aos="fade-up-right">
-                        <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=300&q=80"
+                        <img src="/imeges/japanese.jpeg"
                             alt="Debate Coaching">
                         <div class="service-content">
                             <h3>Japanese Club</h3>
@@ -154,7 +154,7 @@
                         </div>
                     </div>
                     <div class="service-card" data-aos="fade-up-left">
-                        <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=300&q=80"
+                        <img src="/imeges/astro.png"
                             alt="Science Experiments">
                         <div class="service-content">
                             <h3>Astronomical Club</h3>
@@ -165,7 +165,7 @@
                         </div>
                     </div>
                     <div class="service-card" data-aos="fade-up-right">
-                        <img src="https://images.unsplash.com/photo-1452780212940-6f5c0d14d848?auto=format&fit=crop&w=300&q=80"
+                        <img src="/imeges/medical.png"
                             alt="Photography Tours">
                         <div class="service-content">
                             <h3>Medical Club</h3>
@@ -176,7 +176,7 @@
                         </div>
                     </div>
                     <div class="service-card" data-aos="fade-up-left">
-                        <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=300&q=80"
+                        <img src="/imeges/eathar.png"
                             alt="Science Experiments">
                         <div class="service-content">
                             <h3>Eathar Club</h3>
@@ -226,6 +226,9 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init();
+        document.getElementById("myBtn").addEventListener("click", function() {
+            document.getElementById("myDiv").scrollIntoView({ behavior: 'smooth' });
+        })
       </script>
 </body>
 

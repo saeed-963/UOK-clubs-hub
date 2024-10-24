@@ -4,9 +4,12 @@ body {
     padding: 0;
 }
 
+
 .navbar .nav-link{
     color: #f8f8f8;
-
+}
+.navbar .nav-link:hover{
+    cursor: pointer;
 }
 .navbar .dropdown-menu{
     background-color: #03AED2;
@@ -17,6 +20,7 @@ body {
 }
 .navbar .dropdown-item:hover{
     background-color: #03AED2;
+    cursor: pointer;
 }
 .navbar .nav-item{
     font-size: larger;
@@ -44,6 +48,10 @@ header {
     height: 80px;
     border-radius: 50%;
     background-color: white;
+}
+
+.body-container{
+    padding-bottom: 20%;
 }
 
 .news-container {

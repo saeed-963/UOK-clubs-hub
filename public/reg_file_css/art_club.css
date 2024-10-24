@@ -1,12 +1,4 @@
 
-  
-  body {
-    color: #372a15;
-    margin: 0;
-  }
-  
-
-
   .container {
     background-color: #FDDE55;
     border-radius: 20px;
@@ -46,6 +38,9 @@
   color: #f8f8f8;
 
 }
+.navbar .nav-link:hover{
+  cursor: pointer;
+}
 .navbar .dropdown-menu{
   background-color: #03AED2;
 }
@@ -55,6 +50,7 @@
 }
 .navbar .dropdown-item:hover{
   background-color: #03AED2;
+  cursor: pointer;
 }
 .navbar .nav-item{
   font-size: larger;
@@ -159,7 +155,7 @@
   }
   
   label {
-    font-size: 0.875rem;
+    font-size: 1.5rem;
     font-weight: 500;
     display: block;
     margin-bottom: 0.5rem;
