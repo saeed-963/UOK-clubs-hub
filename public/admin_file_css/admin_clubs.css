@@ -8,9 +8,10 @@ body {
   }
   
   h1 {
+    font-weight: bolder;
     margin: 20px 0;
     text-align: center;
-    color: #4CAF50;
+    color: #4b49ac;
     font-size: 2.5em;
   }
   
@@ -45,7 +46,7 @@ body {
   }
   
   .student-form input:focus {
-    border-color: #4CAF50;
+    border-color: #4b49ac;
     outline: none;
   }
   
@@ -53,7 +54,6 @@ body {
     flex: 1 1 100%;
     padding: 15px;
     font-size: 16px;
-    background-color: #4CAF50;
     color: white;
     border: none;
     border-radius: 5px;
@@ -61,9 +61,7 @@ body {
     transition: background-color 0.3s;
   }
   
-  .student-form button:hover {
-    background-color: #45a049;
-  }
+  
   
   /* Table Styling */
   #studentsTable {
@@ -76,7 +74,7 @@ body {
   }
   
   #studentsTable thead {
-    background-color: #4CAF50;
+    background-color: #4b49ac;
     color: white;
     font-weight: bold;
   }
@@ -106,11 +104,11 @@ body {
   }
   
   #studentsTable button.edit-btn {
-    background-color: #4CAF50;
+    background-color: #4b49ac;
   }
   
   #studentsTable button.edit-btn:hover {
-    background-color: #45a049;
+    background-color: #4b49ac;
   }
   
   /* Responsive Design */
