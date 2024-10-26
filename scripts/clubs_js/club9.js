@@ -1,5 +1,5 @@
 // Store students in local storage to persist data
-let students = JSON.parse(localStorage.getItem('club9Students')) || [];
+let students = JSON.parse(localStorage.getItem('PRTeamStudents')) || [];
 
 // Function to render students in the table
 function renderStudents() {
@@ -42,7 +42,7 @@ function addStudent() {
   };
 
   students.push(newStudent);
-  localStorage.setItem('club9Students', JSON.stringify(students));
+  localStorage.setItem('PRTeamStudents', JSON.stringify(students));
   renderStudents();
   clearForm();
 }
@@ -60,7 +60,7 @@ function clearForm() {
 // Function to delete a student
 function deleteStudent(index) {
   students.splice(index, 1);
-  localStorage.setItem('club9Students', JSON.stringify(students));
+  localStorage.setItem('PRTeamStudents', JSON.stringify(students));
   renderStudents();
 }
 
@@ -89,7 +89,7 @@ function updateStudent(index) {
   students[index].phone = document.getElementById('phone').value;
   students[index].email = document.getElementById('email').value;
 
-  localStorage.setItem('club9Students', JSON.stringify(students));
+  localStorage.setItem('PRTeamStudents', JSON.stringify(students));
   renderStudents();
   clearForm();
 
