@@ -1,185 +1,296 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cultural club Registration form</title>
-    <link rel="stylesheet" href="/public/reg_file_css/art_club.css">
-    <link rel="stylesheet" href="/public/bootstrap.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cultural club Registration form</title>
+  <link rel="stylesheet" href="/public/reg_file_css/art_club.css">
+  <link rel="stylesheet" href="/public/bootstrap.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
-<body style="background-color: #68D2E8;">
+
+<body style="background-color: #68D2E8;" class="english">
   <header>
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Navbar</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" onclick="goToHome()">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" onclick="goToStdPro()">My Profile</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" onclick="goToNews()">News</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Our Clubs
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" onclick="goToArtInfo()" >Art Club</a></li>
-                          <li><a class="dropdown-item" onclick="goToAstroInfo()">Astronomical Club</a></li>
-                          <li><a class="dropdown-item" onclick="goToCulturalInfo()">Cultural Club</a></li>
-                          <li><a class="dropdown-item" onclick="goToEatharInfo()">Eathar club</a></li>
-                          <li><a class="dropdown-item" onclick="goToEquestrianInfo()">Equestrian club</a></li>
-                          <li><a class="dropdown-item" onclick="goToJapaneseInfo()">Japanese club</a></li>
-                          <li><a class="dropdown-item" onclick="goToMedicalInfo()">Medical club</a></li>
-                          <li><a class="dropdown-item" onclick="goToMusicInfo()">Music club</a></li>
-                          <li><a class="dropdown-item" onclick="goToPrInfo()">PR club</a></li>
-                          <li><a class="dropdown-item" onclick="goToReachInfo()">Reach out club</a></li>
-                </ul>
-              </li>
-            </ul>
-          </div>
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" onclick="goToHome()" id="homeButton">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" onclick="goToStdPro()" id="profileButton">My Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" onclick="goToNews()" id="newsButton">News</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"
+                id="clubsDropdown">
+                Our Clubs
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" onclick="goToArtInfo()" id="artClubButton">Art Club</a></li>
+                <li><a class="dropdown-item" onclick="goToAstroInfo()" id="astroClubButton">Astronomical Club</a></li>
+                <li><a class="dropdown-item" onclick="goToCulturalInfo()" id="culturalClubButton">Cultural Club</a></li>
+                <li><a class="dropdown-item" onclick="goToEatharInfo()" id="eatharClubButton">Eathar club</a></li>
+                <li><a class="dropdown-item" onclick="goToEquestrianInfo()" id="equestrianClubButton">Equestrian
+                    club</a></li>
+                <li><a class="dropdown-item" onclick="goToJapaneseInfo()" id="japaneseClubButton">Japanese club</a></li>
+                <li><a class="dropdown-item" onclick="goToMedicalInfo()" id="medicalClubButton">Medical club</a></li>
+                <li><a class="dropdown-item" onclick="goToMusicInfo()" id="musicClubButton">Music club</a></li>
+                <li><a class="dropdown-item" onclick="goToPrInfo()" id="prClubButton">PR club</a></li>
+                <li><a class="dropdown-item" onclick="goToReachInfo()" id="reachClubButton">Reach out club</a></li>
+              </ul>
+            </li>
+          </ul>
         </div>
-        <div class="auth-buttons">
-            <img src="/imeges/pr-logo.jpg" alt="Logo" class="logo">
-        </div>
-      </nav>
-</header>
+      </div>
+      <div class="language-selector">
+        <select id="languageSwitcher" onchange="switchLanguage(); location.reload()">
+          <option value="en">English</option>
+          <option value="ar">العربية</option>
+        </select>
+      </div>
+      <div class="auth-buttons">
+        <img src="/imeges/pr-logo.jpg" alt="Logo" class="logo">
+      </div>
+    </nav>
+  </header>
   <br>
   <br>
-   <div class="container" data-aos="fade-up" data-aos-duration="2500">
+  <div class="container" data-aos="fade-up" data-aos-duration="2500">
     <main>
-      <h1 class="mb-8 text-3xl font-bold">Cultural Club Membership Form</h1>
-    <form class="space-y-8">
-      <div>
-        <div class="grid grid-cols-2 gap-6">
-          <div>
-            <label for="name">Full Name</label>
-            <input id="name" placeholder="Enter your name" required type="text">
-          </div>
-          <div>
-            <label for="university-number">University Number</label>
-            <input id="university-number" placeholder="Enter your university number" required type="text">
-          </div>
-          <div>
-            <label for="date-of-birth">Date of Birth</label>
-            <input id="date-of-birth" required type="date">
-          </div>
-          <div>
-            <label for="Current-residence">Current residence</label>
-            <input id="Current-residence" placeholder="Enter your current residence" required type="text">
-          </div>
-          <div>
-            <label for="Nationality">Nationality</label>
-            <input id="Nationality" placeholder="Enter your Nationality" required type="text">
-          </div>
-          <div>
-            <label for="Colleges">College:</label>
-            <select name="Colleges" id="Colleges">
+      <h1 id="form-title" class="mb-8 text-3xl font-bold">Cultural Club Membership Form</h1>
+      <form class="space-y-8">
+        <div>
+          <div class="grid grid-cols-2 gap-6">
+            <div>
+              <label for="name" id="label-name">Full Name</label>
+              <input id="name" placeholder="Enter your name" required type="text">
+            </div>
+            <div>
+              <label for="university-number" id="label-university-number">University Number</label>
+              <input id="university-number" placeholder="Enter your university number" required type="text">
+            </div>
+            <div>
+              <label for="gpa" id="label-gpa">GPA</label>
+              <input id="gpa" placeholder="Enter your GPA" required type="text">
+            </div>
+            <div>
+              <label for="date-of-birth" id="label-date-of-birth">Date of Birth</label>
+              <input id="date-of-birth" required type="date">
+            </div>
+            <div>
+              <label for="Current-residence" id="label-residence">Current residence</label>
+              <input id="Current-residence" placeholder="Enter your current residence" required type="text">
+            </div>
+            <div>
+              <label for="Nationality" id="label-nationality">Nationality</label>
+              <input id="Nationality" placeholder="Enter your Nationality" required type="text">
+            </div>
+            <div>
+              <label for="Colleges" id="label-colleges">College:</label>
+              <select name="Colleges" id="Colleges">
                 <option value=""></option>
                 <option value="Faculty of Medicine">Faculty of Medicine</option>
                 <option value="Faculty of Dentistry">Faculty of Dentistry</option>
                 <option value="College of Pharmacy">College of Pharmacy</option>
                 <option value="College of Engineering">College of Engineering</option>
-                <option value="Faculty of Civil Engineering and Architecture">Faculty of Civil Engineering and Architecture</option>
+                <option value="Faculty of Civil Engineering and Architecture">Faculty of Civil Engineering and
+                  Architecture</option>
                 <option value="Faculty of Law">Faculty of Law</option>
                 <option value="College of Business Administration">College of Business Administration</option>
-            </select>
+              </select>
+            </div>
           </div>
         </div>
-      </div>
-      <div>
-        <div class="grid grid-cols-2 gap-6">
-          <div>
-            <label for="phone-number">Phone Number</label>
-            <input id="phone-number" placeholder="Enter your phone number" required type="tel">
-          </div>
-          <div>
-            <label for="email">Email Address</label>
-            <input id="email" placeholder="Enter your email address" required type="email">
+        <div>
+          <div class="grid grid-cols-2 gap-6">
+            <div>
+              <label for="phone-number" id="label-phone-number">Phone Number</label>
+              <input id="phone-number" placeholder="Enter your phone number" required type="tel">
+            </div>
+            <div>
+              <label for="email" id="label-email">Email Address</label>
+              <input id="email" placeholder="Enter your email address" required type="email">
+            </div>
           </div>
         </div>
-      </div>
-      <div>
-        <div class="grid grid-cols-2 gap-6">
-          <div>
-            <label for="basic-skills">Membership goal:</label>
-            <textarea id="basic-skills" placeholder="Enter your Membership goal"></textarea>
-          </div>
-          <div>
-            <label for="workshops">Skills:</label>
-            <textarea id="workshops" placeholder="Enter your skills"></textarea>
-          </div>
-          <div>
-            <label for="workshops">Are you a member of another club?</label>
-            <div class="wrapper">
-              <input type="radio" name="select" id="option-1" checked>
-              <input type="radio" name="select" id="option-2">
+        <div>
+          <div class="grid grid-cols-2 gap-6">
+            <div>
+              <label for="basic-skills" id="label-membership-goal">Membership goal:</label>
+              <textarea id="basic-skills" placeholder="Enter your Membership goal"></textarea>
+            </div>
+            <div>
+              <label for="workshops" id="label-skills">Skills:</label>
+              <textarea id="workshops" placeholder="Enter your skills"></textarea>
+            </div>
+            <div>
+              <label id="label-membership" for="workshops">Are you a member of another club?</label>
+              <div class="wrapper">
+                <input type="radio" name="select" id="option-1" checked>
+                <input type="radio" name="select" id="option-2">
                 <label for="option-1" class="option option-1">
                   <div class="dot"></div>
-                   <span>Yes</span>
-                   </label>
+                  <span id="yes-option">Yes</span>
+                </label>
                 <label for="option-2" class="option option-2">
                   <div class="dot"></div>
-                   <span>No</span>
+                  <span id="no-option">No</span>
                 </label>
-             </div>
-            
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      <div>
-        <button class="btn btn-primary" type="submit">Submit</button>
-      </div>
-    </form>
+        <div>
+          <button class="btn btn-primary" type="submit" id="submit-button">Submit</button>
+        </div>
+      </form>
     </main>
-   </div>
-   <br>
-   <br>
-   <br> 
-   <footer>
+  </div>
+  <br>
+  <br>
+  <br>
+  <footer>
     <div class="footeree">
-        <div class="rowee">
-            <a href="#"><i > <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
-                        fill="currentColor"  viewBox="0 0 16 16">
-                        <path
-                            d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951" />
-                    </svg></i></a>
-            <a href="#"><i><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
-                        fill="currentColor" viewBox="0 0 16 16">
-                        <path
-                            d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334" />
-                    </svg></i></a>
+      <div class="rowee">
+        <a href="#"><i> <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+              viewBox="0 0 16 16">
+              <path
+                d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951" />
+            </svg></i></a>
+        <a href="#"><i><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+              viewBox="0 0 16 16">
+              <path
+                d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334" />
+            </svg></i></a>
 
-        </div>
+      </div>
 
-        <div class="rowee">
-            <ul>
-                <li><a href="#">Contact us</a></li>
-                <li><a href="#">Our Services</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Terms & Conditions</a></li>
-                <li><a href="#">Career</a></li>
-            </ul>
-        </div>
+      <div class="rowee">
+        <ul>
+          <li><a href="#">Contact us</a></li>
+          <li><a href="#">Our Services</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms & Conditions</a></li>
+          <li><a href="#">Career</a></li>
+        </ul>
+      </div>
 
-        <div class="rowee">
-            INFERNO Copyright © 2021 Inferno - All rights reserved || Designed By: Mahesh
-        </div>
+      <div class="rowee">
+        INFERNO Copyright © 2021 Inferno - All rights reserved || Designed By: Mahesh
+      </div>
     </div>
-</footer>
-<script src="/scripts/navigate.js"></script>
-<script src="/scripts/bootstrap.bundle.min.js"></script>
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init();
-      </script>
+  </footer>
+  <script src="/scripts/navigate.js"></script>
+  <script src="/scripts/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="/scripts/transltions.js"></script>
+
+  <script>
+    AOS.init();
+    window.onload = function () {
+      const savedLanguage = localStorage.getItem("selectedLanguage");
+      if (savedLanguage) {
+        document.getElementById("languageSwitcher").value = savedLanguage;
+        applyLanguage(savedLanguage);
+      }
+    };
+
+    // تبديل اللغة وحفظها
+    function switchLanguage() {
+      const selectedLanguage = document.getElementById("languageSwitcher").value;
+      localStorage.setItem("selectedLanguage", selectedLanguage);
+      applyLanguage(selectedLanguage);
+    }
+
+    // تطبيق اللغة على النصوص
+    function applyLanguage(language) {
+      const isArabic = language === "ar";
+      document.body.className = isArabic ? "arabic" : "english";
+
+      // Change text content based on the selected language
+      if (isArabic) {
+        document.getElementById("homeButton").innerText = "الرئيسية";
+        document.getElementById("profileButton").innerText = "ملفي الشخصي";
+        document.getElementById("newsButton").innerText = "الأخبار";
+        document.getElementById("clubsDropdown").innerText = "أنديتنا";
+        document.getElementById("artClubButton").innerText = "نادي الرسم";
+        document.getElementById("astroClubButton").innerText = "النادي الفلكي";
+        document.getElementById("culturalClubButton").innerText = "النادي الثقافي";
+        document.getElementById("eatharClubButton").innerText = "نادي إيثار";
+        document.getElementById("equestrianClubButton").innerText = "نادي الفروسية";
+        document.getElementById("japaneseClubButton").innerText = "النادي الياباني";
+        document.getElementById("medicalClubButton").innerText = "النادي الطبي";
+        document.getElementById("musicClubButton").innerText = "نادي الموسيقى";
+        document.getElementById("prClubButton").innerText = "نادي العلاقات العامة";
+        document.getElementById("reachClubButton").innerText = "نادي Reach Out";
+        document.getElementById("form-title").innerText = "نموذج عضوية النادي الثقافي";
+        document.getElementById("label-name").innerText = "الاسم الكامل";
+        document.getElementById("label-university-number").innerText =
+          "الرقم الجامعي";
+        document.getElementById("label-gpa").innerText = "المعدل";
+        document.getElementById("label-date-of-birth").innerText = "تاريخ الميلاد";
+        document.getElementById("label-residence").innerText =
+          "مكان الإقامة الحالي";
+        document.getElementById("label-nationality").innerText = "الجنسية";
+        document.getElementById("label-colleges").innerText = "الكلية:";
+        document.getElementById("label-phone-number").innerText = "رقم الهاتف";
+        document.getElementById("label-email").innerText = "البريد الإلكتروني";
+        document.getElementById("label-membership-goal").innerText = "هدف العضوية:";
+        document.getElementById("label-skills").innerText = "المهارات:";
+        document.getElementById("label-membership").innerText =
+          "هل أنت عضو في نادي آخر؟";
+        document.getElementById("yes-option").innerText = "نعم";
+        document.getElementById("no-option").innerText = "لا";
+        document.getElementById("submit-button").innerText = "إرسال";
+      } else {
+        document.getElementById("homeButton").innerText = "Home";
+        document.getElementById("profileButton").innerText = "My Profile";
+        document.getElementById("newsButton").innerText = "News";
+        document.getElementById("clubsDropdown").innerText = "Our Clubs";
+        document.getElementById("artClubButton").innerText = "Art Club";
+        document.getElementById("astroClubButton").innerText = "Astronomical Club";
+        document.getElementById("culturalClubButton").innerText = "Cultural Club";
+        document.getElementById("eatharClubButton").innerText = "Eathar club";
+        document.getElementById("equestrianClubButton").innerText =
+          "Equestrian club";
+        document.getElementById("japaneseClubButton").innerText = "Japanese club";
+        document.getElementById("medicalClubButton").innerText = "Medical club";
+        document.getElementById("musicClubButton").innerText = "Music club";
+        document.getElementById("prClubButton").innerText = "PR club";
+        document.getElementById("reachClubButton").innerText = "Reach out club";
+        document.getElementById("form-title").innerText =
+          "Cultural Club Membership Form";
+        document.getElementById("label-name").innerText = "Full Name";
+        document.getElementById("label-university-number").innerText =
+          "University Number";
+        document.getElementById("label-gpa").innerText = "GPA";
+        document.getElementById("label-date-of-birth").innerText = "Date of Birth";
+        document.getElementById("label-residence").innerText = "Current residence";
+        document.getElementById("label-nationality").innerText = "Nationality";
+        document.getElementById("label-colleges").innerText = "College:";
+        document.getElementById("label-phone-number").innerText = "Phone Number";
+        document.getElementById("label-email").innerText = "Email Address";
+        document.getElementById("label-membership-goal").innerText =
+          "Membership goal:";
+        document.getElementById("label-skills").innerText = "Skills:";
+        document.getElementById("label-membership").innerText =
+          "Are you a member of another club?";
+        document.getElementById("yes-option").innerText = "Yes";
+        document.getElementById("no-option").innerText = "No";
+        document.getElementById("submit-button").innerText = "Submit";
+      }
+    }
+
+  </script>
 </body>
+
 </html>

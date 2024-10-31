@@ -5,25 +5,25 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Admin</title>
+  <title>Japanese Club Management</title>
   <!-- plugins:css -->
-  <link rel="stylesheet" href="assets/vendors/feather/feather.css">
-  <link rel="stylesheet" href="assets/vendors/ti-icons/css/themify-icons.css">
-  <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">
-  <link rel="stylesheet" href="assets/vendors/font-awesome/css/font-awesome.min.css">
-  <link rel="stylesheet" href="assets/vendors/mdi/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="/skydash-free/dist/assets/vendors/feather/feather.css">
+  <link rel="stylesheet" href="/skydash-free/dist/assets/vendors/ti-icons/css/themify-icons.css">
+  <link rel="stylesheet" href="/skydash-free/dist/assets/vendors/css/vendor.bundle.base.css">
+  <link rel="stylesheet" href="/skydash-free/dist/assets/vendors/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/skydash-free/dist/assets/vendors/mdi/css/materialdesignicons.min.css">
   <!-- endinject -->
   <!-- Plugin css for this page -->
   <!-- <link rel="stylesheet" href="assets/vendors/datatables.net-bs4/dataTables.bootstrap4.css"> -->
-  <link rel="stylesheet" href="assets/vendors/datatables.net-bs5/dataTables.bootstrap5.css">
-  <link rel="stylesheet" href="assets/vendors/ti-icons/css/themify-icons.css">
-  <link rel="stylesheet" type="text/css" href="assets/js/select.dataTables.min.css">
+  <link rel="stylesheet" href="/skydash-free/dist/assets/vendors/datatables.net-bs5/dataTables.bootstrap5.css">
+  <link rel="stylesheet" href="/skydash-free/dist/assets/vendors/ti-icons/css/themify-icons.css">
+  <link rel="stylesheet" type="text/css" href="/skydash-free/dist/assets/js/select.dataTables.min.css">
   <!-- End plugin css for this page -->
   <!-- inject:css -->
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="/skydash-free/dist/assets/css/style.css">
   <!-- endinject -->
-  <link rel="shortcut icon" href="assets/images/favicon.png" />
-  <link rel="stylesheet" href="/public/admin_file_css/news_manage.css">
+  <link rel="shortcut icon" href="/skydash-free/dist/assets/images/favicon.png" />
+  <link rel="stylesheet" href="/public/admin_file_css/admin_clubs.css">
 </head>
 
 <body>
@@ -31,7 +31,7 @@
     <!-- partial:partials/_navbar.html -->
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start">
-        <a class="navbar-brand brand-logo me-5" href="index.html"><img src="/imeges/pr-logo.jpg" class="me-2"
+        <a class="navbar-brand brand-logo me-5" href="#"><img src="/imeges/pr-logo.jpg" class="me-2"
             alt="logo" /></a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
@@ -111,35 +111,11 @@
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link" href="/skydash-free/dist/index.html">
+            <a class="nav-link" href="/views/clubs_managers/art_man.html">
               <i class="icon-grid menu-icon"></i>
-              <span class="menu-title">News</span>
+              <span class="menu-title">My Club</span>
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false"
-              aria-controls="ui-basic">
-              <i class="icon-layout menu-icon"></i>
-              <span class="menu-title">Clubs</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="ui-basic">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="/views/admin_file/art_club.html">Art Club</a></li>
-                <li class="nav-item"> <a class="nav-link" href="/views/admin_file/astro_club.html">Astronomical Club</a></li>
-                <li class="nav-item"> <a class="nav-link" href="/views/admin_file/cultural_club.html">Cultural Club</a></li>
-                <li class="nav-item"> <a class="nav-link" href="/views/admin_file/eathar_club.html">Eathar Club</a></li>
-                <li class="nav-item"> <a class="nav-link" href="/views/admin_file/equestrian_club.html">Equestrian Club</a></li>
-                <li class="nav-item"> <a class="nav-link" href="/views/admin_file/japanese_club.html">Japanese Club</a></li>
-                <li class="nav-item"> <a class="nav-link" href="/views/admin_file/medical_club.html">Medical Club</a></li>
-                <li class="nav-item"> <a class="nav-link" href="/views/admin_file/music_club.html">Music Club</a></li>
-                <li class="nav-item"> <a class="nav-link" href="/views/admin_file/pr_club.html">PR Club</a></li>
-                <li class="nav-item"> <a class="nav-link" href="/views/admin_file/reach_club.html">Reach out Club</a></li>
-
-              </ul>
-            </div>
-          </li>
-          
         </ul>
       </nav>
       <!-- partial -->
@@ -154,36 +130,35 @@
               </div>
             </div>
           </div>
-          <div class="admin-container">
-            <br>
-            <h1>Manage Club News</h1>
-            <br>
-            <form id="news-form">
-                <label for="news-type">News Type:</label>
-                <select id="news-type">
-                    <option value="text">Text</option>
-                    <option value="image">Image</option>
-                    <option value="text-image">Text + Image</option>
-                </select>
-    
-                <label for="news-title">Title:</label>
-                <input type="text" id="news-title" required>
-    
-                <label for="news-content">Content:</label>
-                <textarea id="news-content"></textarea>
-    
-                <label for="news-image">Image (if applicable):</label>
-                <input type="file" id="news-image" accept="image/*">
-                <br>
-                <br>
-                <button class="btn btn-primary" type="submit">Add News</button>
-            </form>
-            <br>
-            <br>
-            <h2>Existing News</h2>
-            <div id="news-list"></div>
+          <h1>Japanese Club Students</h1>
+          <div class="student-form">
+            <input type="text" id="name" placeholder="Full Name">
+            <input type="text" id="universityNumber" placeholder="University Number">
+            <input type="text" id="college" placeholder="College">
+            <input type="text" id="gpa" placeholder="Cumulative Average">
+            <input type="text" id="phone" placeholder="Phone Number">
+            <input type="email" id="email" placeholder="Email">
+            <button class="btn btn-primary" onclick="addStudent()">Add Student</button>
+          </div>
+
+          <table id="studentsTable">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>University Number</th>
+                <th>College</th>
+                <th>GPA</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Students data will be dynamically inserted here -->
+            </tbody>
+          </table>
         </div>
-        </div>
+      </div>
         <!-- content-wrapper ends -->
         
         <!-- partial -->
@@ -194,27 +169,27 @@
   </div>
   <!-- container-scroller -->
   <!-- plugins:js -->
-  <script src="assets/vendors/js/vendor.bundle.base.js"></script>
+  <script src="/skydash-free/dist/assets/vendors/js/vendor.bundle.base.js"></script>
   <!-- endinject -->
   <!-- Plugin js for this page -->
-  <script src="assets/vendors/chart.js/chart.umd.js"></script>
-  <script src="assets/vendors/datatables.net/jquery.dataTables.js"></script>
+  <script src="/skydash-free/dist/assets/vendors/chart.js/chart.umd.js"></script>
+  <script src="/skydash-free/dist/assets/vendors/datatables.net/jquery.dataTables.js"></script>
   <!-- <script src="assets/vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script> -->
-  <script src="assets/vendors/datatables.net-bs5/dataTables.bootstrap5.js"></script>
-  <script src="assets/js/dataTables.select.min.js"></script>
+  <script src="/skydash-free/dist/assets/vendors/datatables.net-bs5/dataTables.bootstrap5.js"></script>
+  <script src="/skydash-free/dist/assets/js/dataTables.select.min.js"></script>
   <!-- End plugin js for this page -->
   <!-- inject:js -->
-  <script src="assets/js/off-canvas.js"></script>
-  <script src="assets/js/template.js"></script>
-  <script src="assets/js/settings.js"></script>
-  <script src="assets/js/todolist.js"></script>
+  <script src="/skydash-free/dist/assets/js/off-canvas.js"></script>
+  <script src="/skydash-free/dist/assets/js/template.js"></script>
+  <script src="/skydash-free/dist/assets/js/settings.js"></script>
+  <script src="/skydash-free/dist/assets/js/todolist.js"></script>
   <!-- endinject -->
   <!-- Custom js for this page-->
-  <script src="assets/js/jquery.cookie.js" type="text/javascript"></script>
-  <script src="assets/js/dashboard.js"></script>
+  <script src="/skydash-free/dist/assets/js/jquery.cookie.js" type="text/javascript"></script>
+  <script src="/skydash-free/dist/assets/js/dashboard.js"></script>
   <!-- <script src="assets/js/Chart.roundedBarCharts.js"></script> -->
   <!-- End custom js for this page-->
-   <script src="/scripts/news_manage.js"></script>
+   <script src="/scripts/clubs_js/club6.js"></script>
 </body>
 
 </html>

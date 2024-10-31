@@ -7,44 +7,49 @@
     <link rel="stylesheet" href="/public/bootstrap.min.css">
     <link rel="stylesheet" href="/public/student_profile.css">
 </head>
-<body>
+<body class="english">
     <header>
         <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
             <div class="container-fluid">
-              <a class="navbar-brand" href="#">Navbar</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" onclick="goToHome()">Home</a>
+                    <a class="nav-link active" aria-current="page" onclick="goToHome()" id="homeButton">Home</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" onclick="goToStdPro()">My Profile</a>
+                    <a class="nav-link" onclick="goToStdPro()" id="profileButton">My Profile</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" onclick="goToNews()">News</a>
+                    <a class="nav-link" onclick="goToNews()" id="newsButton">News</a>
                   </li>
                   <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="clubsDropdown">
                       Our Clubs
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" onclick="goToArtInfo()" >Art Club</a></li>
-                        <li><a class="dropdown-item" onclick="goToAstroInfo()">Astronomical Club</a></li>
-                        <li><a class="dropdown-item" onclick="goToCulturalInfo()">Cultural Club</a></li>
-                        <li><a class="dropdown-item" onclick="goToEatharInfo()">Eathar club</a></li>
-                        <li><a class="dropdown-item" onclick="goToEquestrianInfo()">Equestrian club</a></li>
-                        <li><a class="dropdown-item" onclick="goToJapaneseInfo()">Japanese club</a></li>
-                        <li><a class="dropdown-item" onclick="goToMedicalInfo()">Medical club</a></li>
-                        <li><a class="dropdown-item" onclick="goToMusicInfo()">Music club</a></li>
-                        <li><a class="dropdown-item" onclick="goToPrInfo()">PR club</a></li>
-                        <li><a class="dropdown-item" onclick="goToReachInfo()">Reach out club</a></li>
+                      <li><a class="dropdown-item" onclick="goToArtInfo()" id="artClubButton">Art Club</a></li>
+                      <li><a class="dropdown-item" onclick="goToAstroInfo()" id="astroClubButton">Astronomical Club</a></li>
+                      <li><a class="dropdown-item" onclick="goToCulturalInfo()" id="culturalClubButton">Cultural Club</a></li>
+                      <li><a class="dropdown-item" onclick="goToEatharInfo()" id="eatharClubButton">Eathar club</a></li>
+                      <li><a class="dropdown-item" onclick="goToEquestrianInfo()" id="equestrianClubButton">Equestrian club</a></li>
+                      <li><a class="dropdown-item" onclick="goToJapaneseInfo()" id="japaneseClubButton">Japanese club</a></li>
+                      <li><a class="dropdown-item" onclick="goToMedicalInfo()" id="medicalClubButton">Medical club</a></li>
+                      <li><a class="dropdown-item" onclick="goToMusicInfo()" id="musicClubButton">Music club</a></li>
+                      <li><a class="dropdown-item" onclick="goToPrInfo()" id="prClubButton">PR club</a></li>
+                      <li><a class="dropdown-item" onclick="goToReachInfo()" id="reachClubButton">Reach out club</a></li>
                     </ul>
                   </li>
                 </ul>
               </div>
+            </div>
+            <div class="language-selector">
+                <select id="languageSwitcher" onchange="switchLanguage(); location.reload()">
+                    <option value="en">English</option>
+                    <option value="ar">العربية</option>
+                </select>
             </div>
             <div class="auth-buttons">
                 <img src="/imeges/pr-logo.jpg" alt="Logo" class="logo">
@@ -54,7 +59,7 @@
     <div class="container">
         <div class="card">
             <header class="card-header">
-                <h1 class="card-title">Student Profile</h1>
+                <h1 class="card-title" id="title">Student Profile</h1>
                 <button id="logoutButton" class="button button-destructive">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
                     Logout
@@ -72,15 +77,15 @@
                     </div>
                     <div class="personal-info">
                         <div>
-                            <h3>Name</h3>
-                            <p>John Doe</p>
+                            <h3 id="name">Name</h3>
+                            <p>Saeed Abdullah Hassan</p>
                         </div>
-                        <div>
-                            <h3>University Number</h3>
-                            <p>12345678</p>
+                        <div >
+                            <h3 id="id">University Number</h3>
+                            <p>202020059</p>
                         </div>
-                        <div>
-                            <h3>College</h3>
+                        <div >
+                            <h3 id="college">College</h3>
                             <p>College of Engineering</p>
                         </div>
                     </div>
@@ -88,7 +93,7 @@
                 <div class="info-cards">
                     <div class="card">
                         <header class="card-header">
-                            <h2 class="card-title">
+                            <h2 class="card-title" id="unread">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                                 Unread Messages
                             </h2>
@@ -102,7 +107,7 @@
                     </div>
                     <div class="card">
                         <header class="card-header">
-                            <h2 class="card-title">
+                            <h2 class="card-title" id="requests">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
                                 Club Membership Requests
                             </h2>
@@ -116,10 +121,6 @@
                                 <li>
                                     <span>Debate Society</span>
                                     <span class="badge badge-error">Rejected</span>
-                                </li>
-                                <li>
-                                    <span>Photography Club</span>
-                                    <span class="badge badge-secondary">Pending</span>
                                 </li>
                             </ul>
                         </div>
@@ -160,4 +161,74 @@
 </body>
 <script src="/scripts/bootstrap.bundle.min.js"></script>
 <script src="/scripts/navigate.js"></script>
+<script>
+    window.onload = function() {
+            const savedLanguage = localStorage.getItem('selectedLanguage');
+            if (savedLanguage) {
+                document.getElementById('languageSwitcher').value = savedLanguage;
+                applyLanguage(savedLanguage);
+            }
+        };
+
+        // تبديل اللغة وحفظها
+        function switchLanguage() {
+            const selectedLanguage = document.getElementById('languageSwitcher').value;
+            localStorage.setItem('selectedLanguage', selectedLanguage);
+            applyLanguage(selectedLanguage);
+        }
+
+        // تطبيق اللغة على النصوص
+        function applyLanguage(language) {
+            const isArabic = language === 'ar';
+            document.body.className = isArabic ? 'arabic' : 'english';
+
+            // Change text content based on the selected language
+            if (isArabic) {
+                document.getElementById('homeButton').innerText = 'الرئيسية';
+                document.getElementById('profileButton').innerText = 'ملفي الشخصي';
+                document.getElementById('newsButton').innerText = 'الأخبار';
+                document.getElementById('clubsDropdown').innerText = 'أنديتنا';
+                document.getElementById('artClubButton').innerText = 'نادي الرسم';
+                document.getElementById('astroClubButton').innerText = 'النادي الفلكي';
+                document.getElementById('culturalClubButton').innerText = 'النادي الثقافي';
+                document.getElementById('eatharClubButton').innerText = 'نادي إثراء';
+                document.getElementById('equestrianClubButton').innerText = 'نادي الفروسية';
+                document.getElementById('japaneseClubButton').innerText = 'النادي الياباني';
+                document.getElementById('medicalClubButton').innerText = 'النادي الطبي';
+                document.getElementById('musicClubButton').innerText = 'نادي الموسيقى';
+                document.getElementById('prClubButton').innerText = 'نادي العلاقات العامة';
+                document.getElementById('reachClubButton').innerText = 'نادي Reach Out';
+                document.getElementById('logoutButton').innerText = 'تسجيل الخروج';
+                document.getElementById('unread').innerText = 'الرسائل الغير مقروءة';
+                document.getElementById('requests').innerText = 'طلبات الانتساب الى الاندية';
+                document.getElementById('title').innerText = 'ملفك الشخصي';
+                document.getElementById('name').innerText = "الاسم";
+                document.getElementById('id').innerText = "رقمك الجامعي";
+                document.getElementById('college').innerText = "الكلية";
+            } else {
+                document.getElementById('homeButton').innerText = 'Home';
+                document.getElementById('profileButton').innerText = 'My Profile';
+                document.getElementById('newsButton').innerText = 'News';
+                document.getElementById('clubsDropdown').innerText = 'Our Clubs';
+                document.getElementById('artClubButton').innerText = 'Art Club';
+                document.getElementById('astroClubButton').innerText = 'Astronomical Club';
+                document.getElementById('culturalClubButton').innerText = 'Cultural Club';
+                document.getElementById('eatharClubButton').innerText = 'Eathar club';
+                document.getElementById('equestrianClubButton').innerText = 'Equestrian club';
+                document.getElementById('japaneseClubButton').innerText = 'Japanese club';
+                document.getElementById('medicalClubButton').innerText = 'Medical club';
+                document.getElementById('musicClubButton').innerText = 'Music club';
+                document.getElementById('prClubButton').innerText = 'PR club';
+                document.getElementById('reachClubButton').innerText = 'Reach out club';
+                document.getElementById('logoutButton').innerText = 'Logout';
+                document.getElementById('unread').innerText = 'Unread Messages';
+                document.getElementById('requests').innerText = 'Club Membership Requests';
+                document.getElementById('title').innerText = 'Your profile';
+                document.getElementById('name').innerText = 'Name';
+                document.getElementById('id').innerText = 'University ID';
+                document.getElementById('college').innerText = 'College';
+            }
+            
+        }
+</script>
 </html>

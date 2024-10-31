@@ -1,42 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Log In</title>
     <link rel="stylesheet" href="/public/login_form.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
 </head>
 
 <body>
-    <div class="logo" data-aos="fade-right" data-aos-duration="1500">
-        <img src="/imeges/pr-logo.jpg" alt="pr-logo">
-    </div>
+    <header>
+        <!-- قائمة لتبديل اللغة -->
+        <div class="select">
+            <select onchange="switchLanguage(this.value)">
+                <option value="en">English</option>
+                <option value="ar">العربية</option>
+            </select>
+        </div>
+    </header>
+    
     <div class="card" data-aos="fade-right" data-aos-duration="1500">
         <div class="header">
-            <h3>Welcome Back</h3>
-            <p>Enter your ID and password to sign in to your account.</p>
+            <h3 id="welcome-text">Welcome Back</h3>
+            <p id="login-message">Enter your ID and password to sign in to your account.</p>
         </div>
-        <div class="form" >
+        <div class="form">
             <div class="input-group">
-                <label for="email">Student ID</label>
+                <label for="email" id="id-label">Student ID</label>
                 <input type="email" id="email" required>
             </div>
             <div class="input-group">
-                <label for="password">Password</label>
+                <label for="password" id="password-label">Password</label>
                 <input type="password" id="password" required>
             </div>
         </div>
         <div class="actions">
-            <button type="submit">Log In</button>
+            <button type="submit" id="login-button">Log In</button>
         </div>
     </div>
+    
+    <div class="logo">
+        <img src="/imeges/pr-logo.jpg" alt="pr-logo">
+    </div>
+
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init();
+
+        // التبديل بين اللغات وتخزين اللغة المختارة
+        function switchLanguage(language) {
+            document.documentElement.lang = language;
+            localStorage.setItem('language', language);
+
+            if (language === 'ar') {
+                document.body.style.direction = 'rtl';
+                document.getElementById('welcome-text').innerText = 'أهلاً بعودتك';
+                document.getElementById('login-message').innerText = 'أدخل رقمك الجامعي وكلمة المرور لتسجيل الدخول إلى حسابك.';
+                document.getElementById('id-label').innerText = 'الرقم الجامعي';
+                document.getElementById('password-label').innerText = 'كلمة المرور';
+                document.getElementById('login-button').innerText = 'تسجيل الدخول';
+            } else {
+                document.body.style.direction = 'ltr';
+                document.getElementById('welcome-text').innerText = 'Welcome Back';
+                document.getElementById('login-message').innerText = 'Enter your ID and password to sign in to your account.';
+                document.getElementById('id-label').innerText = 'Student ID';
+                document.getElementById('password-label').innerText = 'Password';
+                document.getElementById('login-button').innerText = 'Log In';
+            }
+        }
+
+        // استرجاع اللغة المحفوظة عند تحميل الصفحة
+        document.addEventListener("DOMContentLoaded", function() {
+            const savedLanguage = localStorage.getItem('language') || 'en';
+            document.querySelector('.select select').value = savedLanguage;
+            switchLanguage(savedLanguage);
+        });
     </script>
 </body>
-
 </html>
