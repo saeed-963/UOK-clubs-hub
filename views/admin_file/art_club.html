@@ -159,6 +159,22 @@
             </div>
           </div>
           <h1>Art Club Students</h1>
+          <div class="message-control">
+            <h3>إرسال رسالة للطلاب</h3>
+            <!-- قائمة منسدلة لاختيار الطالب -->
+            <select id="studentSelect">
+                <option value="">اختر الطالب</option>
+                <!-- سيتم تعبئة أسماء الطلاب ديناميكيًا من `club1.js` -->
+            </select>
+            <br><br>
+            <!-- حقل كتابة الرسالة -->
+            <textarea id="messageContent" placeholder="اكتب رسالتك هنا..." rows="5" cols="50"></textarea>
+            <br>
+            <!-- زر إرسال الرسالة -->
+            <button class="btn btn-primary" onclick="sendMessageToStudent()">إرسال إلى طالب محدد</button>
+            <button class="btn btn-secondary" onclick="sendMessageToAllStudents()">إرسال إلى جميع الطلاب</button>
+        </div>
+        
           <div class="student-form">
             <input type="text" id="name" placeholder="Full Name">
             <input type="text" id="universityNumber" placeholder="University Number">

@@ -1,5 +1,15 @@
+
 // Store students in local storage to persist data
-let students = JSON.parse(localStorage.getItem('ArtClubStudents')) || [];
+let LocalStorage;
+let students = [];
+
+if (typeof localStorage === "undefined" || localStorage === null) {
+  LocalStorage = require('node-localstorage').LocalStorage;
+  localStorage = new LocalStorage('./scratch');
+}
+
+students = JSON.parse(localStorage.getItem('ArtClubStudents')) || [];
+
 
 // Function to render students in the table
 function renderStudents() {
@@ -99,3 +109,81 @@ function updateStudent(index) {
 
 // Initial rendering of students
 renderStudents();
+// دالة لتعبئة قائمة الطلاب
+function populateStudentSelect() {
+  const studentSelect = document.getElementById('studentSelect');
+  studentSelect.innerHTML = '<option value="">اختر الطالب</option>'; // خيار افتراضي
+
+  students.forEach((student, index) => {
+      const option = document.createElement('option');
+      option.value = index; // استخدم index للربط بالطالب
+      option.textContent = student.name; // عرض اسم الطالب
+      studentSelect.appendChild(option);
+  });
+}
+
+// استدعاء الدالة لتعبئة القائمة عند تحميل الصفحة
+window.onload = function() {
+  renderStudents(); // لتحديث جدول الطلاب
+  populateStudentSelect(); // لتحديث القائمة المنسدلة
+};
+
+async function sendMessageToStudent() {
+  const studentIndex = document.getElementById('studentSelect').value;
+  const message = document.getElementById('messageContent').value;
+
+  if (studentIndex === "" || !message) {
+    alert("يرجى اختيار الطالب وكتابة رسالة.");
+    return;
+  }
+
+  const email = students[studentIndex].email;
+
+  try {
+    const response = await fetch('http://localhost:3000/send-email', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email, message }),
+    });
+
+    if (response.ok) {
+      alert("تم إرسال الرسالة بنجاح");
+    } else {
+      alert("حدث خطأ أثناء إرسال الرسالة");
+    }
+  } catch (error) {
+    alert("حدث خطأ أثناء الاتصال بالخادم");
+    console.error(error);
+  }
+}
+
+async function sendMessageToAllStudents() {
+  const message = document.getElementById('messageContent').value;
+  const emails = students.map(student => student.email);
+
+  if (!message) {
+    alert("يرجى كتابة الرسالة لإرسالها إلى جميع الطلاب.");
+    return;
+  }
+
+  try {
+    const response = await fetch('http://localhost:3000/send-emails', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ emails, message }),
+    });
+
+    if (response.ok) {
+      alert("تم إرسال الرسائل بنجاح");
+    } else {
+      alert("حدث خطأ أثناء إرسال الرسائل");
+    }
+  } catch (error) {
+    alert("حدث خطأ أثناء الاتصال بالخادم");
+    console.error(error);
+  }
+}
