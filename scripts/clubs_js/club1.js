@@ -133,29 +133,29 @@ async function sendMessageToStudent() {
   const message = document.getElementById('messageContent').value;
 
   if (studentIndex === "" || !message) {
-    alert("يرجى اختيار الطالب وكتابة رسالة.");
-    return;
+      alert("يرجى اختيار الطالب وكتابة رسالة.");
+      return;
   }
 
   const email = students[studentIndex].email;
 
   try {
-    const response = await fetch('http://localhost:3000/send-email', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ email, message }),
-    });
+      const response = await fetch('http://localhost:3000/send-email', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ email, message }),
+      });
 
-    if (response.ok) {
-      alert("تم إرسال الرسالة بنجاح");
-    } else {
-      alert("حدث خطأ أثناء إرسال الرسالة");
-    }
+      if (response.ok) {
+          alert("تم إرسال الرسالة بنجاح");
+      } else {
+          alert("حدث خطأ أثناء إرسال الرسالة");
+      }
   } catch (error) {
-    alert("حدث خطأ أثناء الاتصال بالخادم");
-    console.error(error);
+      alert("حدث خطأ أثناء الاتصال بالخادم");
+      console.error(error);
   }
 }
 
@@ -164,26 +164,27 @@ async function sendMessageToAllStudents() {
   const emails = students.map(student => student.email);
 
   if (!message) {
-    alert("يرجى كتابة الرسالة لإرسالها إلى جميع الطلاب.");
-    return;
+      alert("يرجى كتابة الرسالة لإرسالها إلى جميع الطلاب.");
+      return;
   }
 
   try {
-    const response = await fetch('http://localhost:3000/send-emails', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ emails, message }),
-    });
+      const response = await fetch('http://localhost:3000/send-emails', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ emails, message }),
+      });
 
-    if (response.ok) {
-      alert("تم إرسال الرسائل بنجاح");
-    } else {
-      alert("حدث خطأ أثناء إرسال الرسائل");
-    }
+      if (response.ok) {
+          alert("تم إرسال الرسائل بنجاح");
+      } else {
+          alert("حدث خطأ أثناء إرسال الرسائل");
+      }
   } catch (error) {
-    alert("حدث خطأ أثناء الاتصال بالخادم");
-    console.error(error);
+      alert("حدث خطأ أثناء الاتصال بالخادم");
+      console.error(error);
   }
 }
+
