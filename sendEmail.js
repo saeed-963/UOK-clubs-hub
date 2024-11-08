@@ -1,39 +1,38 @@
-const mailgun = require('mailgun-js');
-const DOMAIN = 'sandboxcfcda662b36f4b4f801cf963ae808fcc.mailgun.org'; // أدخل النطاق الخاص بك هنا
-const mg = mailgun({ apiKey: '58488a48e4ae317d4b38ce84acf4f85a-72e4a3d5-a91a9685', domain: DOMAIN }); // استبدل YOUR_API_KEY بمفتاحك
+const axios = require('axios');
 
-// دالة لإرسال رسالة إلى طالب معين
-async function sendEmailToStudent(email, message) {
+// ضع هنا API Token الخاص بك من Mailtrap
+const API_TOKEN = 'c8b67ad7dde15a0fb3720d512b9a2115';
+const MAILTRAP_INBOX_ID = 'YOUR_INBOX_ID';
+
+// دالة لإرسال بريد إلكتروني إلى طالب معين أو إلى جميع الطلاب
+async function sendEmail(recipients, subject, text) {
+    const url = `https://send.api.mailtrap.io/api/send`;
+    const toRecipients = recipients.map(email => ({
+        email: email,
+        name: 'Student'
+    }));
+
     const data = {
-        from: 'saeedhasan430@sandboxcfcda662b36f4b4f801cf963ae808fcc.mailgun.org', // بريد إلكتروني مسجل في Mailgun
-        to: email,
-        subject: 'رسالة من النادي',
-        text: message,
+        from: {
+            email: 'hello@demomailtrap.com', // البريد الإلكتروني للمرسل
+            name: 'saeed hassan'
+        },
+        to: toRecipients,             // قائمة بالمستلمين
+        subject: subject,             // موضوع الرسالة
+        text: text                    // محتوى الرسالة
     };
 
     try {
-        const body = await mg.messages().send(data);
-        console.log("Email sent successfully:", body);
+        const response = await axios.post(url, data, {
+            headers: {
+                'Authorization': `Bearer ${API_TOKEN}`,
+                'Content-Type': 'application/json'
+            }
+        });
+        console.log('Email sent successfully:', response.data);
     } catch (error) {
-        console.error("Error in sending email:", error);
+        console.error('Error sending email:', error.response ? error.response.data : error.message);
     }
 }
 
-// دالة لإرسال رسالة جماعية لجميع الطلاب
-async function sendEmailToAllStudents(emails, message) {
-    const data = {
-        from: 'YOUR_EMAIL@example.com',
-        to: emails.join(','),
-        subject: 'رسالة من النادي',
-        text: message,
-    };
-
-    try {
-        const body = await mg.messages().send(data);
-        console.log("Emails sent successfully:", body);
-    } catch (error) {
-        console.error("Error in sending emails:", error);
-    }
-}
-
-module.exports = { sendEmailToStudent, sendEmailToAllStudents };
+module.exports = { sendEmail };

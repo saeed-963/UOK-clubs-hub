@@ -128,16 +128,21 @@ window.onload = function() {
   populateStudentSelect(); // لتحديث القائمة المنسدلة
 };
 
-async function sendMessageToStudent() {
-  const studentIndex = document.getElementById('studentSelect').value;
-  const message = document.getElementById('messageContent').value;
+async function sendEmail() {
+  const to = document.getElementById('studentEmail').value;
+  const subject = document.getElementById('emailSubject').value;
+  const text = document.getElementById('emailText').value;
+  const allStudents = document.getElementById('allStudents').checked;
 
-  if (studentIndex === "" || !message) {
-      alert("يرجى اختيار الطالب وكتابة رسالة.");
+  if (!subject || !text) {
+      alert("يرجى إدخال موضوع الرسالة ومحتواها.");
       return;
   }
 
-  const email = students[studentIndex].email;
+  if (!allStudents && !to) {
+      alert("يرجى إدخال بريد إلكتروني صالح.");
+      return;
+  }
 
   try {
       const response = await fetch('http://localhost:3000/send-email', {
@@ -145,46 +150,16 @@ async function sendMessageToStudent() {
           headers: {
               'Content-Type': 'application/json',
           },
-          body: JSON.stringify({ email, message }),
+          body: JSON.stringify({ to, subject, text, allStudents }),
       });
 
       if (response.ok) {
-          alert("تم إرسال الرسالة بنجاح");
+          alert("تم إرسال البريد الإلكتروني بنجاح.");
       } else {
-          alert("حدث خطأ أثناء إرسال الرسالة");
+          alert("حدث خطأ أثناء إرسال البريد الإلكتروني.");
       }
   } catch (error) {
-      alert("حدث خطأ أثناء الاتصال بالخادم");
+      alert("حدث خطأ أثناء الاتصال بالخادم.");
       console.error(error);
   }
 }
-
-async function sendMessageToAllStudents() {
-  const message = document.getElementById('messageContent').value;
-  const emails = students.map(student => student.email);
-
-  if (!message) {
-      alert("يرجى كتابة الرسالة لإرسالها إلى جميع الطلاب.");
-      return;
-  }
-
-  try {
-      const response = await fetch('http://localhost:3000/send-emails', {
-          method: 'POST',
-          headers: {
-              'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ emails, message }),
-      });
-
-      if (response.ok) {
-          alert("تم إرسال الرسائل بنجاح");
-      } else {
-          alert("حدث خطأ أثناء إرسال الرسائل");
-      }
-  } catch (error) {
-      alert("حدث خطأ أثناء الاتصال بالخادم");
-      console.error(error);
-  }
-}
-
